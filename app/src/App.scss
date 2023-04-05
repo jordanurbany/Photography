@@ -1,0 +1,151 @@
+
+@font-face {
+  font-family: 'Forum';
+  src: url(./assets/fonts/Forum/Forum-Regular.ttf);
+}
+
+.hero-section-container{
+  background-color: #161412;
+  height: 300px;
+
+  .img-wrapper{
+    height: 100%;
+    background-image: url('../src/assets/images/pano-00679.png');
+    background-position: center;
+    background-size: cover;
+
+  }
+
+  p, a, h1{
+    color: white;
+  }
+
+  .btns-wrapper{
+    display: flex;
+    gap: 1em;
+  }
+}
+
+    p, a {
+  color: var(--bs-gray-400);
+  font-family: 'Forum';
+  } 
+
+  .menu-btn {
+    display: flex;
+    top: 0;
+    right: 0;
+    z-index: 20px;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    color: black;
+    border: 0;
+    background-color: white;
+    margin: 20px;
+
+  .menu-icon-container {
+    position: absolute;
+    width: 10px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+  
+
+    span {
+      background-color: #161412;
+      position: absolute;
+      height: 2px;
+      transition-duration: 300ms;
+      transition-property: transform;
+      transition-timing-function: ease-in-out;
+
+    }
+
+    .icon-line{
+      width: 30px;
+    }
+
+  
+    .icon-line:first-child {
+    top: 0px;
+    transform: translateY(-0.375rem);
+    }
+
+    .icon-line:nth-child(2) {
+      top: 2px;
+      transition-property: all;
+      transition-duration: 300ms;
+      transition-delay: 200ms;
+      opacity: 1;
+    }
+
+    .icon-line:last-child {
+      top: 6px;
+      transform: translateY(0.375rem);
+    }
+
+  }
+  &.expanded {
+    background-color: #161412;
+
+    span{
+      background-color: white;
+    }
+    
+   
+    .icon-line:nth-child(2){
+      width: 0;
+      opacity: 0.5;
+
+    }
+    .icon-line:first-child{
+      transform: translateY(3px) rotate(135deg);
+      transition-delay: 200ms;
+    }
+    .icon-line:last-child {
+      transform: translate(-3px) rotate(-135deg);
+      transition-delay: 200ms;
+    }
+  }
+
+}
+
+.menu-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10;
+  z-index: 10;
+  height: 100vh;
+  padding-top: 24px;
+  background-color: #161412;
+  color: white;
+  transition-property: all;
+  transition-duration: 300ms;
+  opacity: 0;
+  transform: translate(-360deg);
+  
+  &.expanded {
+    opacity: 1;
+    transform: translatex(0);   
+  }
+  .menu-list {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    li {
+      list-style-type: none;
+
+      a{
+        color: white;
+        font-size: 36px;
+      }
+    }
+  }
+}
