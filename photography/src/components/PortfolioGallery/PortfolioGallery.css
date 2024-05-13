@@ -4,8 +4,8 @@
   }
   
   .gallery-item {
-    width: 200px; /* adjust this value to your desired width */
-    height: 150px; /* adjust this value to your desired height */
+    width: 350px; 
+    height: 250px; 
     border-radius: 10px;
     overflow: hidden;
   }

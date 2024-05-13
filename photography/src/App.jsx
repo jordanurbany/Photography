@@ -10,11 +10,12 @@ function App() {
       <main>
         <section id="PortfolioSelect">
           <h2>Portfolios</h2>
+          //
           <ul>
             <PortfolioGallery {...PORTFOLIO_SELECT[0]} />
-            <PortfolioGallery {...PORTFOLIO_SELECT[1]} />
+            {/* <PortfolioGallery {...PORTFOLIO_SELECT[1]} />
             <PortfolioGallery {...PORTFOLIO_SELECT[2]} />
-            <PortfolioGallery {...PORTFOLIO_SELECT[3]} />
+            <PortfolioGallery {...PORTFOLIO_SELECT[3]} /> */}
           </ul>
         </section>
       </main>
