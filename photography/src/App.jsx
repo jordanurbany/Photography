@@ -1,33 +1,7 @@
-import logo from "./logo.svg";
-import "./App.css";
-import MyanmarImg from "./assets/pano1.jpg";
-
-const reactDescriptions = ["Travel", "Landscape", "Sports"];
-
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function PortfolioSelect() {
-  return (
-    <li>
-      <img src=".." alt=".." />
-      <h3>Title</h3>
-      <p>Description</p>
-    </li>
-  );
-}
-
-function Header() {
-  const description = reactDescriptions[genRandomInt(2)];
-  return (
-    <header>
-      <h1>Jordan Urbany Photography</h1>
-      <p>{description} Photography </p>
-      <img src={MyanmarImg} alt="pano1" className="fullWidthImage" />
-    </header>
-  );
-}
+import React from "react";
+import { PORTFOLIO_SELECT } from "./components/PortfolioSelect.jsx";
+import Header from "./components/Header/Header.jsx";
+import PortfolioGallery from "./components/PortfolioGallery/PortfolioGallery.jsx";
 
 function App() {
   return (
@@ -37,10 +11,10 @@ function App() {
         <section id="PortfolioSelect">
           <h2>Portfolios</h2>
           <ul>
-            <PortfolioSelect title="New Zealand" description="hyperlink" />
-            <PortfolioSelect title="Thailand" description="hyperlink" />
-            <PortfolioSelect title="Laos" description="hyperlink" />
-            <PortfolioSelect title="Vietnam" description="hyperlink" />
+            <PortfolioGallery {...PORTFOLIO_SELECT[0]} />
+            <PortfolioGallery {...PORTFOLIO_SELECT[1]} />
+            <PortfolioGallery {...PORTFOLIO_SELECT[2]} />
+            <PortfolioGallery {...PORTFOLIO_SELECT[3]} />
           </ul>
         </section>
       </main>
