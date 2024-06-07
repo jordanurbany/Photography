@@ -1,31 +1,13 @@
-import logo from "./logo.svg";
-import "./App.css";
-import MyanmarImg from "./assets/pano1.jpg";
-
-const reactDescriptions = ["Travel", "Landscape", "Sports"];
-
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
+import "./components/header/Header.css";
+import Header from "./components/header/Header.jsx";
 
 function PortfolioSelect() {
   return (
     <li>
-      <img src=".." alt=".." />
+      <img src=".." alt=".." class="" />
       <h3>Title</h3>
       <p>Description</p>
     </li>
-  );
-}
-
-function Header() {
-  const description = reactDescriptions[genRandomInt(2)];
-  return (
-    <header>
-      <h1>Jordan Urbany Photography</h1>
-      <p>{description} Photography </p>
-      <img src={MyanmarImg} alt="pano1" className="fullWidthImage" />
-    </header>
   );
 }
 
