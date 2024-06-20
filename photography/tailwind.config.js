@@ -1,10 +1,11 @@
-/** @type {import('postcss-load-config').Config} */
-const config = {
-  plugins: [
-    require("tailwindcss"),
-    require("daisyui"),
-    // Other plugins if needed
-  ],
+module.exports = {
+  mode: "jit",
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  darkMode: false,
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
 };
-
-export default config;

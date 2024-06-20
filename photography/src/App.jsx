@@ -1,32 +1,30 @@
-import "./components/header/Header.css";
-import Header from "./components/header/Header.jsx";
-
-function PortfolioSelect() {
-  return (
-    <li>
-      <img src=".." alt=".." class="" />
-      <h3>Title</h3>
-      <p>Description</p>
-    </li>
-  );
-}
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import Header from "./components/header/Header";
+import PortfolioGallery from "./components/portfolioSelect/PortfolioGallery";
+import PortfolioSelect from "./components/portfolioSelect/PortfolioSelect";
+import LandPagePano from "./components/landPagePano/LandPagePano";
+import GalleryButton from "./components/header/GalleryButton";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <main>
-        <section id="PortfolioSelect">
-          <h2>Portfolios</h2>
-          <ul>
-            <PortfolioSelect title="New Zealand" description="hyperlink" />
-            <PortfolioSelect title="Thailand" description="hyperlink" />
-            <PortfolioSelect title="Laos" description="hyperlink" />
-            <PortfolioSelect title="Vietnam" description="hyperlink" />
-          </ul>
-        </section>
-      </main>
-    </div>
+    <Router>
+      <Layout>
+        <div className="bg-black min-h-screen text-white">
+          <LandPagePano />
+          <main>
+            <Routes>
+              <Route path="/" element={<PortfolioGallery />} />
+              <Route path="/portfolio/:country" element={<PortfolioSelect />} />
+              {/* Route for dynamic galleries */}
+              <Route path="/gallery/:galleryName" element={<GalleryButton />} />
+            </Routes>
+          </main>
+        </div>
+      </Layout>
+    </Router>
   );
 }
 

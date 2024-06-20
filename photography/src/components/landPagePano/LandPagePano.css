@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.header {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px; /* Adjust the height to your liking */
+  overflow: hidden; /* Ensure images don't overflow the container */
+}
+
+.fullWidthImage {
+  position: absolute; /* Position absolutely for sliding effect */
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Start fully transparent */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition for both opacity and position */
+}
+
+.fullWidthImage.visible {
+  opacity: 1; /* Fully opaque */
+  transform: translateX(0); /* Move to center */
+}
+
+.fullWidthImage.hidden {
+  opacity: 0; /* Fully transparent */
+  transform: translateX(100%); /* Move off-screen to the right */
+}
+
+.hidden-leaving {
+  opacity: 0;
+  transform: translateX(-100%); /* Move off-screen to the left */
+}
+
+.header-title {
+  text-align: center;
+  font-size: 3em; /* Adjust the size as needed */
+  font-family: 'Playfair Display', serif; /* Use a more elegant font */
+  margin: 20px 0; /* Add some margin for spacing */
+}
+

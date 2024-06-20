@@ -1,0 +1,31 @@
+ul.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-around;
+  gap: 10px; /* Add gap between items */
+}
+
+li.portfolio-item {
+  cursor: pointer;
+  list-style-type: none;
+  margin: 3px;
+  width: 23%; /* Ensure 4 items fit in a row, accounting for margins and gaps */
+  height: 500px; /* Set a fixed height for the list items */
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+img.portfolio-image {
+  width: 100%;
+  height: 100%; /* Maintain aspect ratio by ensuring height fills the container */
+  object-fit: cover; /* Cover ensures the image covers the container without stretching */
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+li.portfolio-item:hover img.portfolio-image {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+}
