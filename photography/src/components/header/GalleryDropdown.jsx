@@ -10,21 +10,56 @@ const GalleryDropdown = ({ onClick }) => {
         className="block px-4 py-2 hover:bg-gray-700"
         onClick={onClick}
       >
-        Gallery 1
+        Indonesia
       </Link>
       <Link
         to="/gallery/gallery2"
         className="block px-4 py-2 hover:bg-gray-700"
         onClick={onClick}
       >
-        Gallery 2
+        Laos
+      </Link>
+      <Link
+        to="/gallery/gallery2"
+        className="block px-4 py-2 hover:bg-gray-700"
+        onClick={onClick}
+      >
+        New Zealand
       </Link>
       <Link
         to="/gallery/gallery3"
         className="block px-4 py-2 hover:bg-gray-700"
         onClick={onClick}
       >
-        Gallery 3
+        Myanmar
+      </Link>
+      <Link
+        to="/gallery/gallery3"
+        className="block px-4 py-2 hover:bg-gray-700"
+        onClick={onClick}
+      >
+        Nicaragua
+      </Link>
+      <Link
+        to="/gallery/gallery2"
+        className="block px-4 py-2 hover:bg-gray-700"
+        onClick={onClick}
+      >
+        Pacific Northwest
+      </Link>
+      <Link
+        to="/gallery/gallery3"
+        className="block px-4 py-2 hover:bg-gray-700"
+        onClick={onClick}
+      >
+        Thailand
+      </Link>
+      <Link
+        to="/gallery/gallery2"
+        className="block px-4 py-2 hover:bg-gray-700"
+        onClick={onClick}
+      >
+        Vietnam
       </Link>
     </div>
   );

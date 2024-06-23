@@ -1,38 +1,56 @@
-// src/components/header/Header.jsx
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import GalleryDropdown from "./GalleryDropdown";
+import Urbany from "../../assets/logo/urbany.jpg";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-black text-white p-4  p-4 pb6 pt-6 mb-6">
+    <header className="bg-black text-white p-4 pb-6 pt-6 mb-6">
       <nav className="container mx-auto flex justify-between items-center">
-        <div className="text-center flex-grow">
-          <Link to="/" className="text-6xl font-semibold font-fancy">
-            Urbany Photography
+        <div className="text-left flex-grow">
+          <Link
+            to="/"
+            className="inline-block transition-all duration-300 ease-in-out"
+            onClick={() => console.log("logo clicked")}
+          >
+            <img
+              src={Urbany}
+              alt="Urbany Photography Logo"
+              className="w-[650px] h-[125px] object-contain transition-all duration-300 ease-in-out hover:scale-110 hover:brightness-125"
+            />
           </Link>
         </div>
-        <div className="flex space-x-4 items-center">
-          <Link to="/" className="hover:underline">
+        <div className="flex space-x-1 items-center">
+          <Link
+            to="/"
+            className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange text-2xl py-4 px-4 mt-6"
+          >
             Home
           </Link>
-          <Link to="/about" className="hover:underline">
+          <Link
+            to="/about"
+            className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange text-2xl py-4 px-4 mt-6"
+          >
             About
           </Link>
-          <Link to="/prints" className="hover:underline">
+          <Link
+            to="/prints"
+            className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange text-2xl py-4 px-4 mt-6"
+          >
             Prints
           </Link>
           <div className="relative group">
             <button
-              className="flex items-center focus:outline-none"
+              className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange flex items-center focus:outline-none text-2xl px-4 mt-6"
               onClick={() => setIsOpen(!isOpen)}
             >
               Gallery
               <svg
-                className={`w-5 h-5 ml-2 transition-transform duration-200 ${
+                className={`w-6 h-6 ml-2 transition-transform duration-200 ${
                   isOpen ? "rotate-180" : ""
                 }`}
                 fill="none"
@@ -67,8 +85,17 @@ const Header = () => {
               )}
             </Transition>
           </div>
-          <Link to="/contact" className="hover:underline">
+          <Link
+            to="/contact"
+            className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange text-2xl py-4 px-4 mt-6"
+          >
             Contact
+          </Link>
+          <Link
+            to="/cart"
+            className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange text-2xl py-4 px-4 mt-6"
+          >
+            <FaShoppingCart className="w-8 h-8" />
           </Link>
         </div>
       </nav>
