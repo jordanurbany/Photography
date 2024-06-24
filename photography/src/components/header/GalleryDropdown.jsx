@@ -1,63 +1,67 @@
-// src/components/header/GalleryDropdown.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 
 const GalleryDropdown = ({ onClick }) => {
+  const handleClick = (galleryName) => {
+    console.log(`${galleryName} clicked`);
+    onClick(); // Close the dropdown
+  };
+
   return (
-    <div className="absolute hidden bg-gray-800 text-white mt-2 rounded-md shadow-lg w-36 group-hover:block">
+    <div className="bg-gray-800 text-white rounded-md shadow-lg w-48">
       <Link
-        to="/gallery/gallery1"
+        to="/gallery/indonesia"
         className="block px-4 py-2 hover:bg-gray-700"
-        onClick={onClick}
+        onClick={() => handleClick("Indonesia")}
       >
         Indonesia
       </Link>
       <Link
-        to="/gallery/gallery2"
+        to="/gallery/laos"
         className="block px-4 py-2 hover:bg-gray-700"
-        onClick={onClick}
+        onClick={() => handleClick("Laos")}
       >
         Laos
       </Link>
       <Link
-        to="/gallery/gallery2"
+        to="/gallery/new-zealand"
         className="block px-4 py-2 hover:bg-gray-700"
-        onClick={onClick}
+        onClick={() => handleClick("New Zealand")}
       >
         New Zealand
       </Link>
       <Link
-        to="/gallery/gallery3"
+        to="/gallery/myanmar"
         className="block px-4 py-2 hover:bg-gray-700"
-        onClick={onClick}
+        onClick={() => handleClick("Myanmar")}
       >
         Myanmar
       </Link>
       <Link
-        to="/gallery/gallery3"
+        to="/gallery/nicaragua"
         className="block px-4 py-2 hover:bg-gray-700"
-        onClick={onClick}
+        onClick={() => handleClick("Nicaragua")}
       >
         Nicaragua
       </Link>
       <Link
-        to="/gallery/gallery2"
+        to="/gallery/pacific-northwest"
         className="block px-4 py-2 hover:bg-gray-700"
-        onClick={onClick}
+        onClick={() => handleClick("Pacific Northwest")}
       >
         Pacific Northwest
       </Link>
       <Link
-        to="/gallery/gallery3"
+        to="/gallery/thailand"
         className="block px-4 py-2 hover:bg-gray-700"
-        onClick={onClick}
+        onClick={() => handleClick("Thailand")}
       >
         Thailand
       </Link>
       <Link
-        to="/gallery/gallery2"
+        to="/gallery/vietnam"
         className="block px-4 py-2 hover:bg-gray-700"
-        onClick={onClick}
+        onClick={() => handleClick("Vietnam")}
       >
         Vietnam
       </Link>

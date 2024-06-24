@@ -44,6 +44,9 @@ module.exports = {
         ".hover\\:text-darkOrange:hover": {
           color: "#ff8c00",
         },
+        ".image-visible": {
+          display: "block",
+        },
       };
 
       addUtilities(newUtilities, ["responsive", "hover"]);

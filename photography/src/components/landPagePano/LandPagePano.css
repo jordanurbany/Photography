@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
-.header {
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-}
-
 .image-container {
   position: relative;
   display: flex;
@@ -27,7 +20,7 @@
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   opacity: 0; /* Start fully transparent */
-  transition: opacity 1s ease, transform 1s ease; /* Smooth transition for both opacity and position */
+  transition: opacity 1.5s ease, transform 3s ease; /* Adjust transition duration here */
 }
 
 .fullWidthImage.visible {
@@ -51,4 +44,3 @@
   font-family: 'Playfair Display', serif; /* Use a more elegant font */
   margin: 20px 0; /* Add some margin for spacing */
 }
-

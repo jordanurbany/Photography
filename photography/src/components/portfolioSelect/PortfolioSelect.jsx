@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./PortfolioSelect.css";
 
-function PortfolioSelect({ image, title, description, link }) {
+function PortfolioSelect({ image, title, link }) {
   const navigate = useNavigate();
 
   const navigateToPage = () => {
@@ -11,8 +11,7 @@ function PortfolioSelect({ image, title, description, link }) {
   return (
     <li onClick={navigateToPage} className="portfolio-item">
       <img src={image} alt={title} className="portfolio-image" />
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <h3 className="portfolio-title">{title}</h3>
     </li>
   );
 }

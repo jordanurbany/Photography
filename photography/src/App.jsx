@@ -7,18 +7,26 @@ import Footer from "./components/footer/Footer.jsx";
 import PortfolioGallery from "./components/portfolioSelect/PortfolioGallery";
 import PortfolioSelect from "./components/portfolioSelect/PortfolioSelect";
 import LandPagePano from "./components/landPagePano/LandPagePano";
+import LandPagePanoWrapper from "./components/landPagePano/LandPagePanoWrapper";
 import GalleryButton from "./components/header/GalleryButton";
+import IndonesiaGallery from "./components/pages/IndonesiaGallery";
+import NewZealandGallery from "./components/pages/NewZealandGallery";
 
 function App() {
   return (
     <Router>
       <Layout>
         <div className="bg-black min-h-screen text-white">
-          <LandPagePano />
+          <LandPagePanoWrapper />
           <main>
             <Routes>
               <Route path="/" element={<PortfolioGallery />} />
               <Route path="/portfolio/:country" element={<PortfolioSelect />} />
+              <Route path="/gallery/indonesia" element={<IndonesiaGallery />} />
+              <Route
+                path="/gallery/new-zealand"
+                element={<NewZealandGallery />}
+              />
               {/* Route for dynamic galleries */}
               <Route path="/gallery/:galleryName" element={<GalleryButton />} />
             </Routes>

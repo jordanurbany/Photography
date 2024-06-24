@@ -1,3 +1,5 @@
+/* PortfolioSelect.css */
+
 ul.portfolio-list {
   display: flex;
   flex-wrap: wrap;
@@ -11,21 +13,41 @@ li.portfolio-item {
   list-style-type: none;
   margin: 3px;
   width: 23%; /* Ensure 4 items fit in a row, accounting for margins and gaps */
-  height: 500px; /* Set a fixed height for the list items */
+  height: 600px; /* Adjust height to accommodate larger image */
   flex-grow: 1;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease; /* Add transition for smooth animation */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white; /* Ensure text is white for contrast */
 }
 
 img.portfolio-image {
   width: 100%;
-  height: 100%; /* Maintain aspect ratio by ensuring height fills the container */
+  height: 80%; /* Maintain aspect ratio by ensuring height fills most of the container */
   object-fit: cover; /* Cover ensures the image covers the container without stretching */
   border-radius: 10px;
-  transition: transform 0.3s ease; /* Add transition for smooth animation */
+  transition: transform 0.4s ease; /* Add transition for smooth animation */
+  position: absolute; /* Position absolute to allow scaling */
+  top: 0;
+  left: 0;
 }
 
 li.portfolio-item:hover img.portfolio-image {
-  transform: scale(1.05); /* Slightly enlarge image on hover */
+  transform: scale(1.20); /* Slightly enlarge image on hover */
 }
+
+.portfolio-title {
+  margin-top: 8px;
+  font-size: 1.75rem; /* Set the font size to 2.5rem */
+  text-align: center;
+  color: white; /* Ensure the title is white */
+  position: absolute;
+  bottom: 20px; /* Position at the bottom of the container */
+  width: 100%; /* Full width to ensure centering */
+}
+
+

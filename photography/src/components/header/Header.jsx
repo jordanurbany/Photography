@@ -1,15 +1,36 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import GalleryDropdown from "./GalleryDropdown";
 import Urbany from "../../assets/logo/urbany.jpg";
 import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Close the dropdown when the location changes
+    setIsOpen(false);
+  }, [location]);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
 
   return (
-    <header className="bg-black text-white p-4 pb-6 pt-6 mb-6">
+    <header className="bg-black text-white p-4 pb-6 pt-6 mb-6 relative z-50">
       <nav className="container mx-auto flex justify-between items-center">
         <div className="text-left flex-grow">
           <Link
@@ -28,25 +49,31 @@ const Header = () => {
           <Link
             to="/"
             className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange text-2xl py-4 px-4 mt-6"
+            onClick={() => console.log("home clicked")}
           >
             Home
           </Link>
           <Link
             to="/about"
             className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange text-2xl py-4 px-4 mt-6"
+            onClick={() => console.log("about clicked")}
           >
             About
           </Link>
           <Link
             to="/prints"
             className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange text-2xl py-4 px-4 mt-6"
+            onClick={() => console.log("Prints clicked")}
           >
             Prints
           </Link>
-          <div className="relative group">
+          <div className="relative" ref={dropdownRef}>
             <button
               className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange flex items-center focus:outline-none text-2xl px-4 mt-6"
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => {
+                setIsOpen(!isOpen);
+                console.log("gallery clicked");
+              }}
             >
               Gallery
               <svg
@@ -75,25 +102,22 @@ const Header = () => {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              {(ref) => (
-                <div
-                  ref={ref}
-                  className="absolute right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg z-20"
-                >
-                  <GalleryDropdown onClick={() => setIsOpen(false)} />
-                </div>
-              )}
+              <div className="absolute right-0 mt-2 w-48">
+                <GalleryDropdown onClick={() => setIsOpen(false)} />
+              </div>
             </Transition>
           </div>
           <Link
             to="/contact"
             className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange text-2xl py-4 px-4 mt-6"
+            onClick={() => console.log("contact clicked")}
           >
             Contact
           </Link>
           <Link
             to="/cart"
             className="transform transition-transform duration-200 ease-in-out hover:scale-105 hover:text-shadow-darkOrange hover:text-darkOrange text-2xl py-4 px-4 mt-6"
+            onClick={() => console.log("cart clicked")}
           >
             <FaShoppingCart className="w-8 h-8" />
           </Link>

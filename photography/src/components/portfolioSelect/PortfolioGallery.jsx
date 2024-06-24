@@ -11,34 +11,34 @@ function PortfolioGallery() {
   const portfolioImages = [
     {
       image: VietnamImg,
-      title: "VietnamImg",
+      title: "Vietnam",
       description: "tra su bird santuary",
-      link: "/portfolio/Vietnam",
+      link: "/gallery/vietnam",
     },
     {
       image: ThailandImg,
-      title: "ThailandImg",
+      title: "Thailand",
       description: "Religh Beach",
-      link: "/portfolio/Thailand",
+      link: "/gallery/thailand",
     },
     {
       image: LaosImg,
-      title: "LaosImg",
+      title: "Laos",
       description: "Top of Ridge Laos",
-      link: "/portfolio/Laos",
+      link: "/gallery/laos",
     },
     {
       image: IndoImg,
-      title: "IndoImg",
+      title: "Indonesia",
       description: "Lances Left",
-      link: "/Portfolio/Indonesia",
+      link: "/gallery/indonesia",
     },
   ];
   return (
     <>
       <div className="text-center">
         <h1 className="text-6xl font bold mb-8 mt-12">Portfolio Gallery</h1>
-        <p className="text-sm mb-8">
+        <p className="text-m mb-10">
           Welcome to the portfolio gallery. Explore the different collections
           and enjoy the visual journey.
         </p>

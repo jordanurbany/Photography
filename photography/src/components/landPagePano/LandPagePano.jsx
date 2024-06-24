@@ -29,7 +29,7 @@ function LandPagePano() {
       const interval = setInterval(() => {
         setLeavingImageIndex(currentImageIndex);
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, 5000);
+      }, 4000);
       return () => clearInterval(interval);
     }
   }, [imagesLoaded, currentImageIndex]);
