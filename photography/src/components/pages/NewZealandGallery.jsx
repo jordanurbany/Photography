@@ -39,7 +39,6 @@ import NZ1_36 from "./newZealandPhotos/NZ1 (36).jpeg";
 import NZ1_37 from "./newZealandPhotos/NZ1 (37).jpeg";
 import NZ1_38 from "./newZealandPhotos/NZ1 (38).jpeg";
 import NZ1_39 from "./newZealandPhotos/NZ1 (39).jpeg";
-import NZ1_40 from "./newZealandPhotos/NZ1 (40).jpeg";
 import NZ1_41 from "./newZealandPhotos/NZ1 (41).jpeg";
 import NZ1_42 from "./newZealandPhotos/NZ1 (42).jpeg";
 import NZ1_43 from "./newZealandPhotos/NZ1 (43).jpeg";
@@ -56,6 +55,22 @@ import NZ1_53 from "./newZealandPhotos/NZ1 (53).jpeg";
 import NZ1_54 from "./newZealandPhotos/NZ1 (54).jpeg";
 import NZ1_55 from "./newZealandPhotos/NZ1 (55).jpeg";
 import NZ1_56 from "./newZealandPhotos/NZ1 (56).jpeg";
+import NZ1_57 from "./newZealandPhotos/NZ1 (57).jpeg";
+import NZ1_58 from "./newZealandPhotos/NZ1 (58).jpeg";
+import NZ1_59 from "./newZealandPhotos/NZ1 (59).jpeg";
+import NZ1_60 from "./newZealandPhotos/NZ1 (60).jpeg";
+import NZ1_61 from "./newZealandPhotos/NZ1 (61).jpeg";
+import NZ1_62 from "./newZealandPhotos/NZ1 (62).jpeg";
+import NZ2_1 from "./newZealandPhotos/NZ2 (1).jpg";
+import NZ2_2 from "./newZealandPhotos/NZ2 (2).jpg";
+import NZ2_3 from "./newZealandPhotos/NZ2 (3).jpg";
+import NZ2_4 from "./newZealandPhotos/NZ2 (4).jpg";
+import NZ2_5 from "./newZealandPhotos/NZ2 (5).jpg";
+import NZ2_6 from "./newZealandPhotos/NZ2 (6).jpg";
+import NZ2_7 from "./newZealandPhotos/NZ2 (7).jpg";
+import NZ2_8 from "./newZealandPhotos/NZ2 (8).jpg";
+import NZ2_9 from "./newZealandPhotos/NZ2 (9).jpg";
+import NZ2_10 from "./newZealandPhotos/NZ2 (10).jpg";
 
 const photos = [
   //photo paths
@@ -98,7 +113,6 @@ const photos = [
   NZ1_37,
   NZ1_38,
   NZ1_39,
-  NZ1_40,
   NZ1_41,
   NZ1_42,
   NZ1_43,
@@ -115,6 +129,22 @@ const photos = [
   NZ1_54,
   NZ1_55,
   NZ1_56,
+  NZ1_57,
+  NZ1_58,
+  NZ1_59,
+  NZ1_60,
+  NZ1_61,
+  NZ1_62,
+  NZ2_1,
+  NZ2_2,
+  NZ2_3,
+  NZ2_4,
+  NZ2_5,
+  NZ2_6,
+  NZ2_7,
+  NZ2_8,
+  NZ2_9,
+  NZ2_10,
 ];
 
 const NewZealandGallery = () => {
