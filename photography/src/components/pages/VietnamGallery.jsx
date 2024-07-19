@@ -15,23 +15,27 @@ import Vietnam_11 from "./vietnamPhotos/Vietnam (11).jpg"; // Adding incremental
 import Vietnam_12 from "./vietnamPhotos/Vietnam (12).jpg"; // Adding incrementally
 import Vietnam_13 from "./vietnamPhotos/Vietnam (13).jpg"; // Adding incrementally
 
-const photos = [
+const horizontalPhotos = [
   Vietnam_1,
   Vietnam_2,
   Vietnam_3,
-  Vietnam_4,
+
   Vietnam_5,
   Vietnam_6,
   Vietnam_7,
   Vietnam_8,
-  Vietnam_9,
   Vietnam_10,
-  Vietnam_11, // Adding incrementally
   Vietnam_12, // Adding incrementally
   Vietnam_13, // Adding incrementally
 ];
+const panoPhotos = [Vietnam_4, Vietnam_9, Vietnam_11];
 
 const VietnamGallery = () => {
+  const photos = [
+    ...horizontalPhotos.map((photo) => ({ src: photo, type: "horizontal" })),
+    //...verticalPhotos.map((photo) => ({ src: photo, type: "vertical" })),
+    ...panoPhotos.map((photo) => ({ src: photo, type: "pano" })),
+  ];
   return <GalleryLayout title="Vietnam" photos={photos} />;
 };
 

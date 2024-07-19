@@ -63,7 +63,7 @@ import Nica60 from "./nicaragua/Nica (60).jpeg";
 import Nica61 from "./nicaragua/Nica (61).jpeg";
 import Nica62 from "./nicaragua/Nica (62).jpeg";
 
-const photos = [
+const horizontalPhotos = [
   //photo paths
   Nica1,
   Nica2,
@@ -77,10 +77,6 @@ const photos = [
   Nica10,
   Nica11,
   Nica12,
-  Nica13,
-  Nica14,
-  Nica15,
-  Nica16,
   Nica17,
   Nica18,
   Nica19,
@@ -128,9 +124,13 @@ const photos = [
   Nica61,
   Nica62,
 ];
+const verticalPhotos = [Nica13, Nica14, Nica15, Nica16, Nica61, Nica62];
 
 const NicaraguaGallery = () => {
-  console.log("GalleryLayout photos", photos);
+  const photos = [
+    ...horizontalPhotos.map((photo) => ({ src: photo, type: "horizontal" })),
+    ...verticalPhotos.map((photo) => ({ src: photo, type: "vertical" })),
+  ];
   return <GalleryLayout title="Nicaragua" photos={photos} />;
 };
 

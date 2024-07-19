@@ -11,7 +11,7 @@ import Myanmar_8 from "./myanmarPhotos/Myanmar (8).jpg";
 import Myanmar_9 from "./myanmarPhotos/Myanmar (9).jpg";
 import Myanmar_10 from "./myanmarPhotos/Myanmar (10).jpg";
 
-const photos = [
+const horizontalPhotos = [
   Myanmar_1,
   Myanmar_2,
   Myanmar_3,
@@ -19,14 +19,17 @@ const photos = [
   Myanmar_5,
   Myanmar_6,
   Myanmar_7,
-  Myanmar_8,
-  Myanmar_9,
-  Myanmar_10,
 ];
+//const verticalPhotos = [];
+const panoPhotos = [Myanmar_8, Myanmar_9, Myanmar_10];
 
 const MyanmarGallery = () => {
-  console.log("GalleryLayout photos", photos);
-  return <GalleryLayout title="Myanar" photos={photos} />;
+  const photos = [
+    ...horizontalPhotos.map((photo) => ({ src: photo, type: "horizontal" })),
+    //...verticalPhotos.map((photo) => ({ src: photo, type: "vertical" })),
+    ...panoPhotos.map((photo) => ({ src: photo, type: "pano" })),
+  ];
+  return <GalleryLayout title="Myanmar" photos={photos} />;
 };
 
 export default MyanmarGallery;

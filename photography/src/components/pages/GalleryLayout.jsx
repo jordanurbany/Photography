@@ -15,12 +15,12 @@ const GalleryLayout = ({ title, photos }) => {
           <div
             key={index}
             className="relative cursor-pointer"
-            onClick={() => setSelectedImage(photo)}
+            onClick={() => setSelectedImage(photo.src)}
           >
             <img
-              src={photo}
-              alt={`${title} ${index + 1}`}
-              className="w-full h-auto block"
+              src={photo.src}
+              alt={photo.alt}
+              className="w-full h-full object-cover block"
             />
             <div className="absolute inset-0 bg-opacity-0 hover:bg-opacity-50 transition-all duration-300 flex items-end justify-center">
               <p className="text-white text-lg font-semibold p-4 transform translate-y-full hover:translate-y-0 transition-all duration-300">

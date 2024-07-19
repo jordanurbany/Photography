@@ -72,46 +72,7 @@ import NZ2_8 from "./newZealandPhotos/NZ2 (8).jpg";
 import NZ2_9 from "./newZealandPhotos/NZ2 (9).jpg";
 import NZ2_10 from "./newZealandPhotos/NZ2 (10).jpg";
 
-const photos = [
-  //photo paths
-  NZ_1,
-  NZ1_2,
-  NZ1_3,
-  NZ1_4,
-  NZ1_5,
-  NZ1_6,
-  NZ1_7,
-  NZ1_8,
-  NZ1_9,
-  NZ1_10,
-  NZ1_11,
-  NZ1_12,
-  NZ1_13,
-  NZ1_14,
-  NZ1_15,
-  NZ1_16,
-  NZ1_17,
-  NZ1_18,
-  NZ1_19,
-  NZ1_20,
-  NZ1_21,
-  NZ1_22,
-  NZ1_23,
-  NZ1_24,
-  NZ1_25,
-  NZ1_26,
-  NZ1_27,
-  NZ1_28,
-  NZ1_29,
-  NZ1_30,
-  NZ1_31,
-  NZ1_32,
-  NZ1_33,
-  NZ1_34,
-  NZ1_35,
-  NZ1_36,
-  NZ1_37,
-  NZ1_38,
+const horizontalPhotos = [
   NZ1_39,
   NZ1_41,
   NZ1_42,
@@ -127,7 +88,6 @@ const photos = [
   NZ1_52,
   NZ1_53,
   NZ1_54,
-  NZ1_55,
   NZ1_56,
   NZ1_57,
   NZ1_58,
@@ -137,18 +97,32 @@ const photos = [
   NZ1_62,
   NZ2_1,
   NZ2_2,
-  NZ2_3,
-  NZ2_4,
   NZ2_5,
   NZ2_6,
+];
+
+const verticalPhotos = [NZ1_2, NZ1_19, NZ1_21, NZ1_34, NZ1_35, NZ2_8, NZ2_9];
+
+const panoPhotos = [
+  NZ1_3,
+  NZ1_8,
+  NZ1_17,
+  NZ1_20,
+  NZ1_24,
+  NZ1_38,
+  NZ1_55,
+  NZ2_3,
+  NZ2_4,
   NZ2_7,
-  NZ2_8,
-  NZ2_9,
   NZ2_10,
 ];
 
 const NewZealandGallery = () => {
-  console.log("GalleryLayout photos", photos);
+  const photos = [
+    ...horizontalPhotos.map((photo) => ({ src: photo, type: "horizontal" })),
+    ...verticalPhotos.map((photo) => ({ src: photo, type: "vertical" })),
+    ...panoPhotos.map((photo) => ({ src: photo, type: "pano" })),
+  ];
   return <GalleryLayout title="New Zealand" photos={photos} />;
 };
 

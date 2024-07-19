@@ -5,10 +5,14 @@ import Thailand_2 from "./thailandPhotos/Thailand (2).jpg";
 import Thailand_3 from "./thailandPhotos/Thailand (3).jpg";
 import Thailand_4 from "./thailandPhotos/Thailand (4).jpg";
 
-const photos = [Thailand_1, Thailand_2, Thailand_3, Thailand_4];
+const horizontalPhotos = [Thailand_1, Thailand_2, Thailand_3, Thailand_4];
 
 const ThailandGallery = () => {
-  console.log("GalleryLayout photos", photos);
+  const photos = [
+    ...horizontalPhotos.map((photo) => ({ src: photo, type: "horizontal" })),
+    //...verticalPhotos.map((photo) => ({ src: photo, type: "vertical" })),
+    //...panoPhotos.map((photo) => ({ src: photo, type: "pano" })),
+  ];
   return <GalleryLayout title="Thailand" photos={photos} />;
 };
 

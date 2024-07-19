@@ -8,10 +8,22 @@ import Laos_5 from "./laosPhotos/Laos (5).jpg";
 import Laos_6 from "./laosPhotos/Laos (6).jpg";
 import Laos_7 from "./laosPhotos/Laos (7).jpg";
 
-const photos = [Laos_1, Laos_2, Laos_3, Laos_4, Laos_5, Laos_6, Laos_7];
+const horizontalPhotos = [Laos_1, Laos_2, Laos_3, Laos_4];
+//const verticalPhotos = [];
+const panoPhotos = [Laos_5, Laos_6, Laos_7];
 
 const LaosGallery = () => {
-  console.log("GalleryLayout photos", photos);
+  const photos = [
+    ...horizontalPhotos.map((photo) => ({
+      src: photo,
+      type: "horizontal",
+    })),
+    // ...verticalPhotos.map((photo) => ({
+    //   src: photo,
+    //   type: "vertical",
+    //})),
+    ...panoPhotos.map((photo) => ({ src: photo, type: "pano" })),
+  ];
   return <GalleryLayout title="Laos" photos={photos} />;
 };
 

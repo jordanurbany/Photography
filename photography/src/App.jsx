@@ -46,10 +46,11 @@ function App() {
                 element={<NewZealandGallery />}
               />
               <Route path="/gallery/nicaragua" element={<NicaraguaGallery />} />
-              {/* Route for dynamic galleries */}
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<ContactPage />} />
+
               <Route path="/prints" element={<PrintsToCart />} />
+
               <Route path="/gallery/:galleryName" element={<GalleryButton />} />
             </Routes>
           </main>
