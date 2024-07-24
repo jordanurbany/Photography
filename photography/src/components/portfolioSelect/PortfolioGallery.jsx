@@ -40,7 +40,8 @@ function PortfolioGallery() {
         <h1 className="text-6xl font bold mb-8 mt-12">Portfolio Gallery</h1>
         <p className="text-m mb-10">
           Welcome to the portfolio gallery. Explore the different collections
-          and enjoy the visual journey.
+          and enjoy the visual journey. DISCLAIMER!!!! THIS SITE IS NOT YET
+          FULLY FUNCTIONING. I HOPE TO HAVE IT THERE IN THE NEXT WEEK
         </p>
         <ul className="portfolio-list">
           {portfolioImages.map((item, index) => (
