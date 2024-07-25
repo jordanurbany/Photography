@@ -1,4 +1,3 @@
-import ContactImg from "../../assets/contact/contact.jpeg";
 import React, { useState } from "react";
 
 const ContactForm = () => {

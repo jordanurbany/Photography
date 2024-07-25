@@ -1,13 +1,9 @@
-// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { CartProvider } from "./components/shoppingCart/CartContext";
 import Layout from "./components/layout/Layout";
-import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import PortfolioGallery from "./components/portfolioSelect/PortfolioGallery";
 import PortfolioSelect from "./components/portfolioSelect/PortfolioSelect";
-import LandPagePano from "./components/landPagePano/LandPagePano";
 import LandPagePanoWrapper from "./components/landPagePano/LandPagePanoWrapper";
 import GalleryButton from "./components/header/GalleryButton";
 import IndonesiaGallery from "./components/pages/IndonesiaGallery";

@@ -1,23 +1,15 @@
-const express = require("express");
-const mongoose = require("mongoose");
+const { MongoClient } = require("mongodb");
 
-const app = express();
-const PORT = 3000;
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
 
-// MongoDB connection
-mongoose.connect("mongodb://localhost/mydatabase", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+async function connectToDatabase() {
+  try {
+    await client.connect();
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Error connecting to MongoDB", error);
+  }
+}
 
-mongoose.connection.on("connected", () => {
-  console.log("Connected to MongoDB");
-});
-
-mongoose.connection.on("error", (err) => {
-  console.error("Error connecting to MongoDB:", err.message);
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+connectToDatabase();
